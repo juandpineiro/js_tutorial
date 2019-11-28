@@ -3,11 +3,13 @@ let Phrase = require("juandpineiro-palindrome");
 function palindromeTester() {
   let string = prompt("Please enter a string for palindrome testing:");
   let phrase = new Phrase(string);
+  let palindromeResult = document.querySelector("#palindromeResult");
+  let content = `<strong>${phrase.content}</strong>`
 
   if (phrase.palindrome()) {
-    alert(`"${phrase.content}" is a palindrome!`);
+    palindromeResult.innerHTML = `"${content}" is a palindrome!`;
   } else {
-    alert(`"${phrase.content}" is not a palindrome.`)
+    palindromeResult.innerHTML = `"${content}" is not a palindrome.`;
   }
 }
 
